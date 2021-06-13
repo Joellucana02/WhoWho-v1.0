@@ -1,51 +1,90 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
+import FeedCard from './FeedCard'
+import FormBox from './FormBox'
+import FormTopBox from './FormTopBox'
+import { v4 as uuid_v4 } from "uuid";
+import FeedButtons from './FeedButtons';
+
 
 const FeedPage = () => {
+  const [db, setDb] = useState([])
+  const [manageData, setManageData] = useState(null)
+  let api = 'http://localhost:5000/user-card';
+  useEffect(()=>{
+    let dataRequest= async ()=>{
+        try {
+            let rawData = await axios.get(api),
+            data = await rawData.data;
+            console.log(data)
+            //console.log(rawData)
+            setDb(data)
+        } catch (error) {
+            console.log(error)    
+        }
+    }
+    dataRequest();
+},[])
+
+const createData= (data)=>{
+  data.id = uuid_v4();
+  let options = {data /* headers:{"content-type":"application/json"} */}
+  let dataRequest= async ()=>{
+     try {
+         let rawData = await axios.post(api,data),
+         res = await rawData.data;
+         //console.log(options)
+         console.log(res)
+         setDb([
+             ...db, res
+         ])
+     } catch (error) {
+         console.log(error)    
+     }
+ }
+ dataRequest();
+}
+ const updateData= (data)=>{
+     let endpoint = `${api}/${data.id}`
+     console.log(endpoint)
+     let dataRequest= async ()=>{
+         try {
+             let rawData = await axios.put(endpoint,data),
+             res = await rawData.data;
+             console.log(res)
+              let newData = db.map(el=>el.id===data.id?data:el)
+             setDb(newData)
+
+         } catch (error) {
+             console.log(error)    
+         }
+     }
+     dataRequest();
+
+ }
+ const deleteData= (id)=>{
+     let endpoint = `${api}/${id}`
+     let dataRequest= async ()=>{
+         try {
+             let rawData = await axios.delete(endpoint),
+             res = await rawData.data;
+             console.log(res)
+              let newData = db.filter(el=>el.id!==id)
+              setDb(newData)
+
+         } catch (error) {
+             console.log(error)    
+         }
+     }
+     dataRequest();
+  
+ }
     return (
         <div>
-  <div className="header">
-    <a href="#">WW</a>
-    <div><input type="search" id="gsearch" name="gsearch" placeholder="Explore" /><i className="fas fa-search" />
-    </div>
-    <form className="form-post ">
-      <input type="text" name="newpost" placeholder="What's Happening?" required />
-      <input type="submit" defaultValue="Hoo Hoo" />
-      <input type="hidden" name="id" />
-      <div className="form-post-close__btn"><i className="fas fa-times" /></div>
-    </form>
-  </div>
-  <div className="content">
-    <div className="content__container" id="content__container-id">
-      <div className="content__top">
-        <div className="content__top-left">
-          <a href="#"><img src="#" alt="women" /></a>
-          <p>Isabella Walker</p>
-          <a href="#">Follow</a>
-        </div>
-        <div className="content__buttons">
-          <button className="edit">Edit</button>
-          <button className="delete">Delete</button>
-        </div>
-        <div className="ellipsis"><i className="fas fa-ellipsis-h" /></div>
-      </div>
-      <div className="content__block">
-        <p className="content__block-text" />
-      </div>
-      <div className="content__bottom">
-        <p>4.631 views</p>
-        <div className="content__bottom-icon">
-          <div><i className="far fa-paper-plane" /></div>
-          <div><i className="fas fa-retweet" /></div>
-          <div><i className="far fa-heart" /></div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-  <div className="btn"><a href="#"><i className="fas fa-plus" /></a>
-  </div>
-  <div className="btn btn-2"><a href="#"><i className="fas fa-user" /></a>
-  </div>
+      <FormTopBox/>
+      <FormBox createData={createData} updateData={updateData} manageData={manageData} setManageData={setManageData}/>
+      <FeedCard data={db} deleteData={deleteData} setManageData={setManageData}/>
+        <FeedButtons/>
 </div>
     )
 }
