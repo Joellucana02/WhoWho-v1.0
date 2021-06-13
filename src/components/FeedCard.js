@@ -8,17 +8,16 @@ const FeedCard = ({data, deleteData, setManageData}) => {
       <div className="content__top">
         <div className="content__top-left">
           <a href="#"><img src="#" alt="women" /></a>
-          <p>{data?data.name:'John Doe'}</p>
+          <p>John Doe</p>
           <a href="#">Follow</a>
-        </div>{data.length===0?'No data':data.map(el=>{
-          <FeedCardButtons key={data.id} data={data} deleteData={deleteData} setManageData={setManageData}/>        
+        </div>
+        {data.length===0?'No data':data.map(el=>
+          <FeedCardButtons key={el.id} data={el} deleteData={deleteData} setManageData={setManageData}/>        
 
-        })}
+        )}
         <div className="ellipsis"><i className="fas fa-ellipsis-h" /></div>
       </div>
-      <div className="content__block">
-        <p className="content__block-text" >{data.content}</p>
-      </div>
+      
       
     </div>
     

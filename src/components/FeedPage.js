@@ -16,7 +16,7 @@ const FeedPage = () => {
         try {
             let rawData = await axios.get(api),
             data = await rawData.data;
-            console.log(data)
+            //console.log(data)
             //console.log(rawData)
             setDb(data)
         } catch (error) {
@@ -25,10 +25,19 @@ const FeedPage = () => {
     }
     dataRequest();
 },[])
-
+console.log(db)
 const createData= (data)=>{
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let time = new Date(),
+    h = time.toLocaleTimeString(undefined),
+    d = time.toLocaleDateString(undefined, options);
+    console.log(h,d)
   data.id = uuid_v4();
-  let options = {data /* headers:{"content-type":"application/json"} */}
+  data.time = h;
+  data.date = d;
+  data.heart = 1;
+  data.share = 1;
+  data.view = 1;
   let dataRequest= async ()=>{
      try {
          let rawData = await axios.post(api,data),

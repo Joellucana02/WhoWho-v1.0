@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 const initialCard= {    
     id:null,
-    content:'',
-    time:'',
-    date:'',
-    heart:0,
-    share:0,
-    view:0,
-    img:'',
-    name:'',
+    content:"",
+    time:"",
+    date:"",
+    heart:null,
+    share:null,
+    view:null,
+    img:"",
+    name:"",
 }
 
 const FormBox = ({createData, updateData, manageData, setManageData}) => {
@@ -49,7 +49,7 @@ const FormBox = ({createData, updateData, manageData, setManageData}) => {
     return (
         <>
     <form className="form-content " onSubmit={handleSubmit}>
-      <textarea name="content" rows="4" cols="50" placeholder="What's Happening?" onChange={handleChange}  value={form.name}/>
+      <textarea name="content" rows="4" cols="50" placeholder="What's Happening?" onChange={handleChange}  value={form.content}/>
       <input type="submit" value="Publish" />
     </form>
     </>
