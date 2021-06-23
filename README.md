@@ -7,7 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm install`
-permite instalar las extenciones que necesita reac para funcionar
+Permite instalar las extenciones que necesita react para funcionar
+
+### `json-server --watch -p 5000 src/api/db.json`
+Permite que se ejecute la base de datos
 
 ### `npm start`
 

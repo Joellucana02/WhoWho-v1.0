@@ -1,0 +1,43 @@
+{
+  "post": [
+    {
+      "principal_page": "http://localhost:3000/users/dashboard/u0002.html",
+      "genero": "women",
+      "name": "Isabella Walker",
+      "image": "http://localhost:3000/users/images/u0002.jpg",
+      "pubication": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error eaque ex modi, laborum eveniet quidem quo unde quod culpa voluptatem sint, iusto magnam tenetur quia deserunt nemo cum, est vitae.",
+      "views": 4
+    },
+    {
+      "principal_page": "http://localhost:3000/users/dashboard/u0001.html",
+      "genero": "man",
+      "name": "Gamboa Bryan",
+      "image": "http://localhost:3000/users/images/u0001.jpg",
+      "pubication": "sean vienvenidos a mi pagina wew espero les guste",
+      "views": 1024
+    },
+    {
+      "principal_page": "http://localhost:3000/users/dashboard/u0002.html",
+      "genero": "women",
+      "name": "Isabella",
+      "image": "http://localhost:3000/users/images/u0002.jpg",
+      "pubication": "fasfsafsafssssssssssssssssssssssssssssdfsdfsafsadfsafsagojadkjghjkldahgksdjjjjjjjjjjjjj\nfsjafjkasf",
+      "views": 23
+    }
+  ],
+  "comment": [
+    {
+      "idComments": 1,
+      "body": "sd",
+      "author": 1
+    }
+  ],
+  "profile": [
+    {
+      "idProfile": 1,
+      "name": "Maxi Gamboa",
+      "nickname": "Bryan",
+      "age": 16
+    }
+  ]
+}

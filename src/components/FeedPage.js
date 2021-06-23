@@ -1,5 +1,5 @@
 import React from 'react';
-const jsonHref = "http://localhost:5000/post";
+const jsonPostHref = "http://localhost:5000/post";
 const maxTwitsPage = 20 // su modificación requiere cambiar el return de Twits
 
 function Twit (el){
@@ -58,7 +58,7 @@ function Twits (){
     try 
     {
         let jonPost = new XMLHttpRequest ();
-        jonPost.open("GET", jsonHref, false);
+        jonPost.open("GET", jsonPostHref, false);
         jonPost.send ();                                                                              // pendiente-123-1 intentar hacer sistema para "agarrar solo lo necesario": https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
         let post = JSON.parse (jonPost.response);
         // if (maxTwitsPage <= 0){                                                                    // test-123
@@ -132,7 +132,7 @@ function enviar(texto) {
     post.pubication = texto;
     console.log(post);
     console.log("position 1");
-    jonPost.open("POST", jsonHref, false);
+    jonPost.open("POST", jsonPostHref, false);
     jonPost.send(post); // error 500 fallo en el servidor ?
 
 }
