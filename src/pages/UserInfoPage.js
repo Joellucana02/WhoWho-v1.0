@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const UserInfoPage = () => {
+  const [error, setError] = useState('')
+  const handleLogout = (e)=>{
+
+  } 
     return (
         <div>
   <div className="user__info">
@@ -46,6 +50,7 @@ const UserInfoPage = () => {
     <div className="user__s user__delete">
       <p>Delete Account</p>
     </div>
+  
     <div className="user__s user__delete">
       <div className="btn"><a href="../home/home.html"><i className="fas fa-home" /></a>
       </div>

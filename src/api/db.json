@@ -1,37 +1,59 @@
 {
   "user-card": [
     {
-      "id": "a1e6704c-af0e-45c1-a09c-ae71a68e1d9a",
-      "content": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "time": "1:37:10 AM",
-      "date": "Sunday, June 13, 2021",
+      "id": "3e642e94-2061-42b7-a075-55cff21bb578",
+      "content": "componentDidMount(),componentWillUmmount(),componentDidUpdate() respectively. But a functional component using the useEffect() hook will handle all this lifecycle. Since the complexity of useEffect is more as we are doing all three work at once and we may keep updating our state endlessly.",
+      "time": "4:16:02 PM",
+      "date": "Wednesday, June 23, 2021",
       "heart": 1,
       "share": 1,
       "view": 1,
-      "img": "",
-      "name": ""
+      "img": "./media/default12.jpg",
+      "name": "hello@megaemail.com"
     },
     {
-      "id": "162e70b4-ca84-4f78-a693-3329103080ba",
-      "content": "The locales and options arguments customize the behavior of the function and let applications specify the language whose formatting conventions should be used. In implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent.",
-      "time": "1:38:29 AM",
-      "date": "Sunday, June 13, 2021",
+      "id": "216beb8d-f200-4877-bd4a-c09123abe40b",
+      "content": "Then I have updated my state and returned component mounted false. What It does it when a new effect is to be executed then it will clean the previous effect.",
+      "time": "4:27:22 PM",
+      "date": "Wednesday, June 23, 2021",
       "heart": 1,
       "share": 1,
       "view": 1,
-      "img": "",
-      "name": ""
+      "img": "./media/default12.jpg",
+      "name": "gaap@hamail.com"
     },
     {
-      "id": "f180e700-d60c-4cbc-8f07-b2e8187b8b39",
-      "content": "the locale used and the form of the string returned are entirely implementation dependent.",
-      "time": "1:38:47 AM",
-      "date": "Sunday, June 13, 2021",
+      "id": "e050d699-c4cf-49d2-b041-1a8539076789",
+      "content": "Since react-hooks provide a simple and elegant way of writing code but if we don’t use those tools correctly then it may cause an adverse effect on the performance of the project.",
+      "time": "4:28:29 PM",
+      "date": "Wednesday, June 23, 2021",
       "heart": 1,
       "share": 1,
       "view": 1,
-      "img": "",
-      "name": ""
+      "img": "./media/default12.jpg",
+      "name": "ma12@landa31.com"
+    },
+    {
+      "id": "cd8f8dad-a46d-47ab-8581-30736749fb4a",
+      "content": "Wrapper around react's `useState` hook.\n * Use this hook to prevent memory leak as this wont call set state on unmounted component.",
+      "time": "4:32:35 PM",
+      "date": "Wednesday, June 23, 2021",
+      "heart": 1,
+      "share": 1,
+      "view": 1,
+      "img": "./media/default12.jpg",
+      "name": "gama@pasda.com"
+    },
+    {
+      "id": "6af6a7f1-9265-41d0-81de-798f87f341c8",
+      "content": "Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. ",
+      "time": "6:51:13 PM",
+      "date": "Wednesday, June 23, 2021",
+      "heart": 1,
+      "share": 1,
+      "view": 1,
+      "img": "./media/default12.jpg",
+      "name": "example@example.com"
     }
   ]
 }

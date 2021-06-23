@@ -5,10 +5,13 @@ const FeedCardButtons = ({data, deleteData, setManageData}) => {
     
     return (
         <>
+        <hr/>
+        <div className='card_wrapper'>
         <div className="content__buttons">
           <button className="edit" onClick={()=>setManageData(data)}>Edit</button>
           <button className="delete" onClick={()=>deleteData(data.id)}>Delete</button>
         </div>
+        <h3>{data.name&&data.name}</h3>
         <div className="content__block">
         <p className="content__block-text" >{data.content}</p>
       </div>
@@ -24,6 +27,8 @@ const FeedCardButtons = ({data, deleteData, setManageData}) => {
           <div><i className="far fa-heart" />{data?data.heart:'00'} Likes</div>
         </div>
       </div>
+      </div>
+      <hr/>
         </>
     )
 }
